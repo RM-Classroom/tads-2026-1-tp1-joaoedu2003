@@ -10,7 +10,7 @@ public class LocadoraContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=LocadoraDB;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer(@"Server=localhost;Database=LocadoraDB;User Id=sa;Password=j2@@338$$$!&;TrustServerCertificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

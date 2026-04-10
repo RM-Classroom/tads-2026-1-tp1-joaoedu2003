@@ -9,7 +9,6 @@
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Azure.Core.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Azure.Identity.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Humanizer.dll
-/home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.Build.Locator.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll
@@ -37,6 +36,9 @@
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.SqlServer.Server.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Microsoft.Win32.SystemEvents.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Mono.TextTemplating.dll
+/home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/System.ClientModel.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/System.CodeDom.dll
 /home/joao/Documentos/PUC Minas/São Gabriel/Terceiro Semestre/Tecnologias Para Análise e Desenvolvimento de Sistemas/SistemaVendaVeiculos/SistemaVendaVeiculos/bin/Debug/net9.0/System.Composition.AttributedModel.dll

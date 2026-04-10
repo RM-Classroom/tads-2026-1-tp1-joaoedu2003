@@ -9,53 +9,83 @@ public class ConsultasController : ControllerBase
     public ConsultasController(LocadoraContext context) => _context = context;
 
     [HttpGet("veiculos-por-tipo")]
-    public async Task<IActionResult> GetByFabricanteECategoria(string fab, string cat)
+    public async Task<ActionResult<IEnumerable<VeiculoReadDTO>>> GetByFabricanteECategoria(string fab, string cat)
     {
-        var result = await _context.Veiculos
-            .Include(v => v.fabricante)
-            .Include(v => v.categoria)
+        return Ok(await _context.Veiculos
             .Where(v => v.fabricante.nome.Contains(fab) && v.categoria.descricao.Contains(cat))
-            .ToListAsync();
-        return Ok(result);
+            .Select(v => new VeiculoReadDTO {
+                id = v.id,
+                modelo = v.modelo,
+                anoFabricacao = v.anoFabricacao,
+                nomeFabricante = v.fabricante.nome,
+                descricaoCategoria = v.categoria.descricao
+            })
+            .ToListAsync());
     }
 
     [HttpGet("alugueis-cliente/{cpf}")]
-    public async Task<IActionResult> GetAlugueisAtivos(string cpf)
+    public async Task<ActionResult<IEnumerable<AluguelReadDTO>>> GetAlugueisAtivos(string cpf)
     {
-        var result = await _context.Alugueis
-            .Include(a => a.cliente)
-            .Include(a => a.veiculo)
+        return Ok(await _context.Alugueis
             .Where(a => a.cliente.cpf == cpf && a.dataDevolucao == null)
-            .ToListAsync();
-        return Ok(result);
+            .Select(a => new AluguelReadDTO {
+                id = a.id,
+                nomeCliente = a.cliente.nome,
+                cpfCliente = a.cliente.cpf,
+                modeloVeiculo = a.veiculo.modelo,
+                fabricanteVeiculo = a.veiculo.fabricante.nome,
+                dataSaida = a.dataSaida,
+                dataDevolucao = a.dataDevolucao,
+                valorTotal = a.valorTotal
+            })
+            .ToListAsync());
     }
 
     [HttpGet("veiculos-km")]
-    public async Task<IActionResult> GetVeiculosPoucoRodados(int kmMax, int catId)
+    public async Task<ActionResult<IEnumerable<VeiculoReadDTO>>> GetVeiculosPoucoRodados(int kmMax, int catId)
     {
         return Ok(await _context.Veiculos
-            .Include(v => v.categoria)
             .Where(v => v.quilometragemAtual < kmMax && v.categoriaId == catId)
+            .Select(v => new VeiculoReadDTO {
+                id = v.id,
+                modelo = v.modelo,
+                anoFabricacao = v.anoFabricacao,
+                nomeFabricante = v.fabricante.nome,
+                descricaoCategoria = v.categoria.descricao
+            })
             .ToListAsync());
     }
 
     [HttpGet("historico-fabricante/{fabricanteId}")]
-    public async Task<IActionResult> GetHistoricoByFabricante(int fabricanteId)
+    public async Task<ActionResult<IEnumerable<AluguelReadDTO>>> GetHistoricoByFabricante(int fabricanteId)
     {
-        var result = await _context.Alugueis
-            .Include(a => a.veiculo)
-                .ThenInclude(v => v.fabricante)
+        return Ok(await _context.Alugueis
             .Where(a => a.veiculo.fabricanteId == fabricanteId)
-            .ToListAsync();
-        return Ok(result);
+            .Select(a => new AluguelReadDTO {
+                id = a.id,
+                nomeCliente = a.cliente.nome,
+                modeloVeiculo = a.veiculo.modelo,
+                dataSaida = a.dataSaida,
+                valorTotal = a.valorTotal
+            })
+            .ToListAsync());
     }
 
     [HttpGet("alugueis-premium")]
-    public async Task<IActionResult> GetAlugueisCaros(decimal valorMin)
+    public async Task<ActionResult<IEnumerable<AluguelReadDTO>>> GetAlugueisCaros(decimal valorMin)
     {
         return Ok(await _context.Alugueis
-            .Include(a => a.cliente)
             .Where(a => a.valorTotal > valorMin)
+            .Select(a => new AluguelReadDTO {
+                id = a.id,
+                nomeCliente = a.cliente.nome,
+                cpfCliente = a.cliente.cpf,
+                modeloVeiculo = a.veiculo.modelo,
+                fabricanteVeiculo = a.veiculo.fabricante.nome,
+                valorTotal = a.valorTotal,
+                dataSaida = a.dataSaida,
+                dataDevolucao = a.dataDevolucao
+            })
             .ToListAsync());
     }
 }
